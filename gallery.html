@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>商品图片预览 · ImageGrab</title>
+    <link rel="stylesheet" href="gallery.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="toolbar">
+        <div class="toolbar-brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div class="brand-text">
+            <h1>商品图片</h1>
+            <p id="sourceMeta" class="meta">等待加载…</p>
+          </div>
+        </div>
+
+        <div class="toolbar-actions">
+          <span id="selectedCount" class="count-pill">已选 0 / 0</span>
+          <button type="button" id="btnSelectAll" class="btn ghost">全选</button>
+          <button type="button" id="btnInvert" class="btn ghost">反选</button>
+          <button type="button" id="btnDownload" class="btn primary" disabled>
+            下载选中
+          </button>
+        </div>
+      </header>
+
+      <div id="progressBar" class="progress" hidden>
+        <div class="progress-track">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+        <p id="progressText" class="progress-text">准备下载…</p>
+      </div>
+
+      <main>
+        <div id="emptyState" class="empty" hidden>
+          <h2>暂无图片</h2>
+          <p>
+            请打开淘宝、京东或拼多多商家版商品详情页，点击右下角「获取图片」后再回到此处。
+          </p>
+        </div>
+
+        <div id="grid" class="grid" role="list"></div>
+      </main>
+
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    </div>
+
+    <script src="gallery.js"></script>
+  </body>
+</html>
